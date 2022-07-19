@@ -1,8 +1,8 @@
 body {
-    background-color: whitesmoke;
+    background-color: lightslategray;
     font-family: 'Times New Roman', Times, serif;
-    display: inline-block;
-    
+    display: flexbox;
+    color: antiquewhite;
 }
 
 h3 {
@@ -13,13 +13,13 @@ li {
     margin: auto;
 }
 .grassType {
-    color: green;
+    color: greenyellow;
 }
 .fireType {
     color: red;
 }
 .waterType {
-    color: blue;
+    color: cyan;
 }
 
 #linkHeader {
