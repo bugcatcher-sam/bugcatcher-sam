@@ -1,0 +1,41 @@
+body {
+    background-color: whitesmoke;
+    font-family: 'Times New Roman', Times, serif;
+    display: inline-block;
+    
+}
+
+h3 {
+    font-weight: bold;
+}
+
+li {
+    margin: auto;
+}
+.grassType {
+    color: green;
+}
+.fireType {
+    color: red /*Mark's comment 7/17: don't forget the semicolon*/
+}
+.waterType {
+    color: blue;
+}
+
+#linkHeader {
+    margin: auto;
+    display: inline;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: coral;
+}
+
+th {
+    width: 50%;
+}
+
+td {
+    width: 50%;
+}
