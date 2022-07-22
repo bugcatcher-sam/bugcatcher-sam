@@ -2,106 +2,180 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Ilda Kim</title><!--Mark's comment 7/17: No included external .css stylesheet?-->
-    <style>
-        h1 {font-weight: bolder; font-family: "Noto Sans Gothic",serif} /*think I have to download fonts*/
-        h2 {font-weight: bold; font-family: "Noto Sans Gothic", serif} /*Mark's comment 7/17: try to get in the habit of ending the last one with a semicolon*/
-        p {font-weight: normal; font-family: "Times New Roman",serif}
-        div {display: block; margin-left: auto; margin-right: auto}
-        .ToDo-List-Container {
-            display: table; /*This separates div by div*/
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .images{
-            margin-left: 15%;
-        }
-        .reward{
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .Personal-ToDo{
-            float: left;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Ilda Kim</title>
+
+    <!-- CSS only -->
+    <link rel="stylesheet" href="css/ilda.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 </head>
 
 <body>
-    <div style="text-align: center; margin: 0">
-        <h1 style ="color: coral">My Planner</h1>
-        <h2>Ilda Kim</h2>
-    </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
+</script>
 
-    <div>
-        <p>
-            This is a paragraph. Fill it with text. Lots and lots of text
-            <span>
-                This is a span
-            </span>
-        </p>
-    </div>
-<hr>
-
-    <div class ="ToDo-List-Container">
-        <div class ="Personal-ToDo" style="float: left">
-            <h3>Personal ToDo List</h3>
-            <ul>
-                <li>Visit UPS and ship packages</li>
-                <li>Meeting with advisor</li>
-                <li>Orthodontist appointment</li>
-                <li>Buy Domain</li>
+<!-- navbar is from codepen -->
+<section class="navigation">
+    <div class="nav-container">
+        <div class="brand">
+            <a href="#!">Logo</a>
+        </div>
+        <nav>
+            <div class="nav-mobile"><a id="navbar-toggle" href="#!"><span></span></a></div>
+            <ul class="nav-list">
+                <li>
+                    <a href="#!">Home</a>
+                </li>
+                <li>
+                    <a href="#!">About</a>
+                </li>
+                <li>
+                    <a href="#!">Services</a>
+                    <ul class="navbar-dropdown">
+                        <li>
+                            <a href="#!">Sass</a>
+                        </li>
+                        <li>
+                            <a href="#!">Less</a>
+                        </li>
+                        <li>
+                            <a href="#!">Stylus</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#!">Portfolio</a>
+                </li>
+                <li>
+                    <a href="#!">Category</a>
+                    <ul class="navbar-dropdown">
+                        <li>
+                            <a href="#!">Sass</a>
+                        </li>
+                        <li>
+                            <a href="#!">Less</a>
+                        </li>
+                        <li>
+                            <a href="#!">Stylus</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#!">Contact</a>
+                </li>
             </ul>
+        </nav>
+    </div>
+</section>
+
+<!--Codepen ends here-->
+
+
+
+<div class="header">
+    <div class="container-xl p-5 bg-primary shadow-lg"> <!-- p for padding, my for margin -->
+        <h1 style="color: aliceblue">My Planner</h1>
+        <h2 style="color: antiquewhite">Ilda Kim</h2>
+    </div>
+</div>
+
+<div class="content container-fluid"> <!-- container-fluid's width is always 100% -->
+    <h3 class="p-3">WEEK 6</h3>
+    <div class="row d-flex justify-content-center">
+        <div class="col-sm-2 border">
+            <p>MONDAY</p>
         </div>
 
-        <div class="School-ToDo" style="float: left; margin-right: 20px"><!--Mark's comment 7/9: I guess you're giving these elements class names to be ready for the CSS assignment? Right now, they don't do anything since you didn't specify .classname in the style block up top.-->
-            <h3>School ToDo List</h3>
+        <div class="col-sm-1 border">
+            <p>TUESDAY</p>
+        </div>
+
+        <div class="col-sm-2 border">
+            <p>WEDNESDAY</p>
+
+        </div>
+
+        <div class="col-sm-1 border">
+            <p style="width: 100%">THURSDAY</p> <!--Width 100% does not work for text
+                the text peeks out when the window size is small-->
+        </div>
+
+        <div class="col-sm-1 border">
+            <p>FRIDAY</p>
+        </div>
+
+        <div class="col-sm-1 border">
+            <p>SATURDAY</p>
+        </div>
+
+        <div class="col-sm-1 border">
+            <p>SUNDAY</p>
+        </div>
+    </div>
+
+    <div class="row d-flex justify-content-center"> <!--flexbox here-->
+        <div class="col-sm-2 border">
             <ol>
-                <li>Finish Lecture 4: <strong>AVL Tree</strong> Take Notes</li>
-                <li>Bible Reading: Week 2 Essay topic 2</li>
-                <li>Leetcode: BST delete and insert</li>
-                <li>Finish html webpage assignment</li>
+                <li><em>Work</em>: 10pm - 5pm</li>
+                <li>W: Spreadsheet: implement AssignAssignees (AppScript) </li>
+                <li>W: iMac deployment</li>
+                <p><!--newline--></p>
+                <p><em>Homework</em></p>
+                <li>CSS 343: Watch last missed lecture</li>
+                <li>Read bible and do the essay prompt</li>
             </ol>
         </div>
 
-        <div class="reward" style="float: left;">
-            <h3><em>REWARD</em></h3>
-            <a href = "https://www.youtube.com">Watch YouTube videos in bed</a>
+        <div class="col-sm-1 border">
+            <li>Meeting for BIMD at 12:30pm</li>
+            <li>Lecture CSS 343 at 6:00pm</li>
+        </div>
+
+        <div class="col-sm-2 border">
+            <p>PENDING</p>
+
+        </div>
+
+        <div class="col-sm-1 border">
+            <p>PENDING</p>
+        </div>
+
+        <div class="col-sm-1 border">
+            <p>PENDING</p>
+        </div>
+
+        <div class="col-sm-1 border">
+            <img src="images/nap.png" style="width: 100%;height: 50%;"> <!--100% makes it so that it fits into
+                 the column cell-->
+        </div>
+
+        <div class="col-sm-1 border">
+            <img src="images/nap.png" style="width: 100%;height: 50%;">
         </div>
     </div>
 
-    <div class="images" style="float: bottom";> <!--Mark's comment 7/17: the semicolon goes before the last quotemark-->
-        <div>
-            <img src="/images/ups.jpg" alt="ups" title="task 1 of personal todo" width="300" height="200">
-        </div>
-
-        <div style="float: left">
-            <img src="/images/ortho.jpg" alt="ups" title="task 1 of personal todo" width="300" height="200"><!--Mark's comment 7/9: In case you want to start getting in the habit of doing accessible design, use alt attributes for a screenreader to read to a user (meaning be descriptive of what the image depicts) and title attributes to give the image a title for when someone hovers their mouse over the image. They should be unique to the image unless the images are the same...-->
-            <img src="/images/avl.png" alt="ups" title="task 1 of personal todo" width="300" height="200">
-        </div>
-
-        <div style="display:block;">
-            <table>
-                <tr>
-                    <th>Teammates</th>
-                    <th>NetID</th>
-                </tr>
-                <tr>
-                    <td>Alfreds Futterkiste</td>
-                    <td>Maria Anders</td>
-                    <td>Germany</td>
-                </tr>
-                <tr>
-                    <td>Centro comercial Moctezuma</td>
-                    <td>Francisco Chang</td>
-                    <td>Mexico</td>
-                </tr>
-            </table>
-        </div>
-    </div>
+    <div class="container p-5"></div>
+    <h3>Knowledge Queue</h3>
+    <div class="table-responsive"></div>
+    <table class="table border-2">
+        <td>Leetcode</td>
+        <td>CSS 343</td>
+        <td>Project</td>
+    </table>
+    <table class="table border-1">
+        <td>Pending</td>
+        <td>Pending</td>
+        <td>Pending</td>
+    </table>
 
 
 
-    <hr style="margin-top: 250px">
+</div>
+
 </body>
+
+
 </html>
