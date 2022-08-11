@@ -38,9 +38,15 @@
             <div class="row">
             <h1>LOOK AT THIS CAT:</h1>
         </div>
+    </div>
         <div class="image"><!--FIXED! Mark's comment 7/17: Stay away from using reserved names for class names. You've got the element img specified in the style block at the top of the page, not the class img (which you would do with .img). Not sure if that was intentional.-->
 
         <img src="/images/cat birthday.jpg" alt="cute cat" title="this is a silly cat" style="width: 15%; height: 15%; border-style: double; border-width: 15px; border-radius: 5px; border-color: rgb(9, 130, 37);"><!--FIXED! Mark's comment 7/17: See if you can replace the width and height with styles. Also, try to start designing for responsive sites, so don't hardcode the size but make it relative like 50%-->
+
+        <div class="img"><!--Mark's comment 8/2: In other words, rename this class to something besides img since img is a tag name. Mark's comment 7/17: Stay away from using reserved names for class names. You've got the element img specified in the style block at the top of the page, not the class img (which you would do with .img). Not sure if that was intentional.-->
+
+        <img src="/images/cat birthday.jpg" alt="cute cat" title="this is a silly cat" width="400" height="300"><!--Mark's comment 8/2: Still unresolved. Mark's comment 7/17: See if you can replace the width and height with styles. Also, try to start designing for responsive sites, so don't hardcode the size but make it relative like 50%-->
+
     </div>
     
     </div>
@@ -71,7 +77,11 @@
 </div>
 
         <!--inline-->
+
         <table style="width: 100px; border: 1px solid black">; <!--FIXED! Mark's comment 7/17: try to get in the habit of ending the last item with a semicolon-->
+
+        <table style="width: 100px; border: 1px solid black">;<!--Mark's comment 8/2: Still unresolved. Mark's comment 7/17: try to get in the habit of ending the last item with a semicolon-->
+
             <tr>
                 <th>likes</th>
                 <th>hates</th>
@@ -83,6 +93,7 @@
                 <td>people</td>
             </tr>
         </table>
+    </table>
         <h2>please send your rsvp to <a href="mailto:funnycat@realemail.com">funnycat@realemail.com</a>
         </h2>
         
