@@ -20,7 +20,7 @@
                 var mapSW = [0, 8192],
                     mapNE = [8192, 0];
 
-                //Creating map
+                //creating map object
                 var map = L.map('map').setView([0, 0], 2);
 
                 //tiles
@@ -38,23 +38,39 @@
                     map.unproject(mapNE, map.getMaxZoom())
                 ));
 
-                // Markers and popups
-                const myIcon = L.icon({
-                    iconUrl: '/images/cache.png',
+                //icons
+
+
+                // markers and popups
+                const stashIcon = L.icon({
+                    iconUrl: 'images/stash.png',
+                    iconSize: [30, 36],
+                    iconAnchor: [14.5, 35],
                 });
                 var marker = L.marker([70, -180], {
                     draggable: true,
-                }).addTo(map);
-                marker.bindPopup('');
+                }).addTo(map).bindPopup('');
 
                 marker.on('dragend', function(e) {
                     marker.getPopup().setContent('Clicked ' + marker.getLatLng().toString() + '<br />' + 'Pixels ' + map.project(marker.getLatLng(), map.getMaxZoom().toString()))
                 });
 
-                var marker_radio = L.marker(map.unproject([5092, 4115.965], map.getMaxZoom())).addTo(map).bindPopup('<img src="/images/cache.png" alt="test" title="test image popup" style="width: 100%; height: 100%;">');
+                var stash_radio = L.marker(map.unproject([5092, 4115.965], map.getMaxZoom()), {icon: stashIcon}).addTo(map).bindPopup('<img src="images/stash.png" alt="test" title="test image popup" style="width: 100%; height: 100%;">');
 
-                var marker_church = L.marker(map.unproject([1026, 3284.617], map.getMaxZoom())).addTo(map).bindPopup('<img src="/images/cache.png" alt="test" title="test image popup" style="width: 100%; height: 100%;">');
+                var stash_church = L.marker(map.unproject([1026, 3284.617], map.getMaxZoom())).addTo(map).bindPopup('<img src="images/cache.png" alt="test" title="test image popup" style="width: 100%; height: 100%;">');
 
+                var scav_sniper = L.marker(map.unproject([2727, 2560.994], map.getMaxZoom())).addTo(map).bindPopup('<img src="images/cache.png" alt="test" title="test image popup" style="width: 100%; height: 100%;">');
+                //Layers
+                var lg_stash = L.layerGroup([stash_radio, stash_church]).addTo(map);
+
+                var lg_scav_sniper = L.layerGroup([scav_sniper]).addTo(map);
+
+                var overlays = {
+                    "Stashes" : lg_stash,
+                    "Scav Snipers" : lg_scav_sniper,
+                }
+
+                L.control.layers(null, overlays).addTo(map);
 
             </script>
         </body>
