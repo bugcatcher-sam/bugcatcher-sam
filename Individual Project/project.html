@@ -5,6 +5,7 @@
         <title>map test</title>
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <!--Referencing leaflet-->
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin="" />
         
@@ -12,6 +13,30 @@
 
     </head>
         <body style="height: 100%; margin: 0;">
+
+            <div class="hidden">
+
+                <!--Preload images-->
+                <script type="text/javascript">
+                        var images = new Array()
+                        function preload() {
+                            for (i = 0; i < preload.arguments.length; i++) {
+                                images[i] = new Image()
+                                images[i].src = preload.arguments[i]
+                            }
+                        }
+                        preload(
+                            "images/radio stash.png",
+                            "images/stash river.png",
+                            "images/stash village1.png",
+                            "images/stash village2.png",
+                            "images/stash village3.png",
+                            "images/stash village4.png",
+                            "images/stash village5.png",
+                        )
+
+                </script>
+            </div>
             <div id = "map" style="width: 100%; height: 100%; background: #888888; margin: 0;"></div>
 
             <script type="text/javascript">
@@ -39,14 +64,13 @@
                 ));
 
                 //icons
-
-
-                // markers and popups
                 const stashIcon = L.icon({
                     iconUrl: 'images/stash.png',
                     iconSize: [30, 36],
                     iconAnchor: [14.5, 35],
                 });
+
+                // markers and popups
                 var marker = L.marker([70, -180], {
                     draggable: true,
                 }).addTo(map).bindPopup('');
