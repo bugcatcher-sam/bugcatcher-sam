@@ -33,6 +33,11 @@
                             "images/stash village3.png",
                             "images/stash village4.png",
                             "images/stash village5.png",
+                            "images/stash svillage fence.png",
+                            "images/stash svillage hut.png",
+                            "images/stash svillage bog.png",
+                            "images/sniper scav 2.png",
+                            "images/sniper scav 1.png",
                         )
 
                 </script>
@@ -69,8 +74,15 @@
                     iconSize: [30, 36],
                     iconAnchor: [14.5, 35],
                 });
+                const sniperIcon = L.icon({
+                    iconUrl: 'images/sniper.png',
+                    iconSize: [30, 36],
+                    iconAnchor: [14.5, 35],
+                });
 
                 // markers and popups
+                /* This was a marker that could be dragged around the map and was used to get the coordinates of a certain point on the map in order to use for other markers.
+
                 var marker = L.marker([70, -180], {
                     draggable: true,
                 }).addTo(map).bindPopup('');
@@ -78,12 +90,10 @@
                 marker.on('dragend', function(e) {
                     marker.getPopup().setContent('Clicked ' + marker.getLatLng().toString() + '<br />' + 'Pixels ' + map.project(marker.getLatLng(), map.getMaxZoom().toString()))
                 });
-
+                */
                 var stash_radio = L.marker(map.unproject([5092, 4115.965], map.getMaxZoom()), {icon: stashIcon}).addTo(map).bindPopup('<img src="images/radio stash.png" alt="test" title="test image popup" style="width: 800; height: 500%">',{
                     maxWidth: 850
                 });
-
-                var stash_church = L.marker(map.unproject([1026, 3284.617], map.getMaxZoom()), {icon: stashIcon}).addTo(map).bindPopup('<img src="images/cache.png" alt="test" title="test image popup" style="width: 100%; height: 100%;">');
 
                 var stash_river = L.marker(map.unproject([2810, 2177], map.getMaxZoom()), {icon: stashIcon}).addTo(map).bindPopup('<img src="images/stash river.png" alt="test" title="test image popup" style="width: 800; height: 500%;">',{
                     maxWidth: 850
@@ -109,11 +119,29 @@
                     maxWidth: 850
                 });
 
-                var scav_sniper = L.marker(map.unproject([2727, 2560.994], map.getMaxZoom())).addTo(map).bindPopup('<img src="images/cache.png" alt="test" title="test image popup" style="width: 100%; height: 100%;">');
+                var stash_svillage_fence = L.marker(map.unproject([365, 3231], map.getMaxZoom()), {icon: stashIcon}).addTo(map).bindPopup('<img src="images/stash svillage fence.png" alt="test" title="test image popup" style="width: 800; height: 500%">',{
+                    maxWidth: 850
+                });
+
+                var stash_svillage_hut = L.marker(map.unproject([712, 3313], map.getMaxZoom()), {icon: stashIcon}).addTo(map).bindPopup('<img src="images/stash svillage hut.png" alt="test" title="test image popup" style="width: 800; height: 500%">',{
+                    maxWidth: 850
+                });
+
+                var stash_svillage_bog = L.marker(map.unproject([1018, 2992], map.getMaxZoom()), {icon: stashIcon}).addTo(map).bindPopup('<img src="images/stash svillage bog.png" alt="test" title="test image popup" style="width: 800; height: 500%">',{
+                    maxWidth: 850
+                });
+
+                var scav_sniper2 = L.marker(map.unproject([2727, 2560.994], map.getMaxZoom()), {icon: sniperIcon}).addTo(map).bindPopup('<img src="images/sniper scav 2.png" alt="test" title="test image popup" style="width: 800; height: 500%">',{
+                    maxWidth: 850
+                });
+
+                var scav_sniper1 = L.marker(map.unproject([3021, 4443.99], map.getMaxZoom()), {icon: sniperIcon}).addTo(map).bindPopup('<img src="images/sniper scav 1.png" alt="test" title="test image popup" style="width: 800; height: 500%">',{
+                    maxWidth: 850
+                });
                 //Layers
                 var lg_stash = L.layerGroup([stash_radio, stash_church, stash_river, stash_village1, stash_village2]).addTo(map);
 
-                var lg_scav_sniper = L.layerGroup([scav_sniper]).addTo(map);
+                var lg_scav_sniper = L.layerGroup([scav_sniper1, scav_sniper2]).addTo(map);
 
                 var overlays = {
                     "Stashes" : lg_stash,
