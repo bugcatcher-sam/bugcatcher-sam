@@ -81,7 +81,7 @@
                 });
 
                 // markers and popups
-                
+                /* This was a marker that could be dragged around the map which was used to find the cordinates of a point on the map to be used with other markers.
 
                 var marker = L.marker([70, -180], {
                     draggable: true,
@@ -90,7 +90,7 @@
                 marker.on('dragend', function(e) {
                     marker.getPopup().setContent('Clicked ' + marker.getLatLng().toString() + '<br />' + 'Pixels ' + map.project(marker.getLatLng(), map.getMaxZoom().toString()))
                 });
-                
+                */
                 var stash_radio = L.marker(map.unproject([5092, 4115.965], map.getMaxZoom()), {icon: stashIcon}).addTo(map).bindPopup('<img src="images/radio stash.png" alt="test" title="test image popup" style="width: 800; height: 500%">',{
                     maxWidth: 850
                 });
